@@ -1,0 +1,46 @@
+cl_technique_config:
+  name: prer
+  autoencoder_epochs: 50
+  generator_epochs: 1
+  reset_nf: No
+  plot: Yes
+  plot_step: 10
+  autoencoder:
+    rec_loss: mse
+    conditioning_config:
+      type: none
+  nf:
+    blocks: 10
+    levels: 2
+    n_hiddens: 2
+    hidden_size: 2.0
+    lr: 0.001
+    tolerance_training: Yes
+    tolerance: 5
+    nf_weight_decay: 0
+    conditioning_config:
+      type: one_hot
+  regularization:
+    distance: cosine
+    fixed_replay: 5000
+    type: overwrite
+    to_sample: 200
+  weights:
+    er: 1
+    rec: 1
+train_config:
+  epochs: 20
+  load: No
+  save_path: experiments/results/cifar10_ablation/prer/prer3
+  experiments: 1
+  cuda: Yes
+  batch_size: 128
+  save: Yes
+  optimizer: adam
+  lr: 0.001
+cl_config:
+  label_per_task: 2
+  cl_problem: MT
+  shuffle_labels: No
+  regularize: Yes
+  dataset: cifar10

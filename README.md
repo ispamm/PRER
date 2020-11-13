@@ -37,6 +37,10 @@ Please refer to the yaml files to understand how they can be formatted, and to t
 Please cite our work if you find it useful:
 
 ```
-@article{PRER,
+@article{pomponi2020pseudo,
+  title={Pseudo-Rehearsal for Continual Learning with Normalizing Flows},
+  author={Pomponi, Jary and Scardapane, Simone and Uncini, Aurelio},
+  journal={arXiv preprint arXiv:2007.02443},
+  year={2020}
 }
 ```
